@@ -1,0 +1,73 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Usuários
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i>  <a href="#/usuarios">Usuários</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-edit"></i> Cadastro
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="alert alert-success alert-dismissible" role="alert" ng-show="{{usuarioCrudController.exibeSucesso}}">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{usuarioCrudController.mensagemSucesso}}
+    </div>
+    
+    <div class="alert alert-danger alert-dismissible" role="alert" ng-show="{{usuarioCrudController.exibeErro}}">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{usuarioCrudController.mensagemErro}}
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <form name="crudUsuario" ng-controller="UsuarioCrudController as usuarioCrudController" ng-submit="usuarioCrudController.cadastra()">
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input class="form-control" placeholder="Insira o nome do usuário" name="nome" ng-model="usuarioCrudController.usuario.nome">
+                </div>
+
+                <div class="form-group">
+                    <label>Usuário</label>
+                    <input class="form-control" placeholder="Usuário de acesso ao sistema" name="login" ng-model="usuarioCrudController.usuario.login">
+                </div>
+
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha de acesso" name="senha" id="senha" ng-model="usuarioCrudController.usuario.senha">
+                    <p class="help-block">A senha deve conter entre 4 e 10 caracteres</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" class="form-control" placeholder="E-mail do usuário" name="email" ng-model="usuarioCrudController.usuario.email">
+                </div>
+                
+                <div class="form-group">
+                    <label>Perfil de Acesso</label>
+                    <input type="radio" name="role" ng-model="usuarioCrudController.usuario.roles" value="DEV, GERENTE">Gerente
+                    <input type="radio" name="role" ng-model="usuarioCrudController.usuario.roles" value="DEV">Desenvolvedor
+                </div>
+
+                <button type="submit" class="btn btn-success">Salvar</button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->

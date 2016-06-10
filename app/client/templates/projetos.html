@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Projetos
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i> Projetos
+                </li>
+            </ol>
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            
+            <div class="table-responsive" ng-controller="ProjetoConsultaController as projetoConsultaController">
+                <table class="table table-bordered table-hover table-striped" >
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ativo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fbody">
+                            <tr ng-repeat="projeto in projetoConsultaController.projetos">
+                                <td>{{projeto.nome}}</td>
+                                <td>{{projeto.ativo}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default"><a href="#/projetos/{{projeto.idprojetos}}" >Alterar</a></button>
+                                        <div ng-show="{{projeto.ativo}}">
+                                            <button type="button" class="btn btn-default" ng-click="projetoConsultaController.desativa(projeto.idprojetos)">Desativar</button>
+                                        </div>
+                                        <div ng-hide="{{projeto.ativo}}">
+                                            <button type="button" class="btn btn-default" ng-click="projetoConsultaController.ativa(projeto.idprojetos)">Ativar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#/projetos/add" class="btn btn-primary btn-md" role="button">Novo projeto</a>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->

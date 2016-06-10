@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-inbox fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ tarefasController.tarefasCadastradas }}</div>
+                            <div>Tarefas Cadastradas</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#/relatoriotarefas/cadastradas">
+                    <div class="panel-footer">
+                        <span class="pull-left">Mais</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-check-circle fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ tarefasController.tarefasConcluidas }}</div>
+                            <div>Tarefas Concluídas</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#/relatoriotarefas/concluidas">
+                    <div class="panel-footer">
+                        <span class="pull-left">Mais</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-yellow">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-tasks fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ tarefasController.tarefasDeadline }}</div>
+                            <div>Tarefas no deadline</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#/relatoriotarefas/deadline">
+                    <div class="panel-footer">
+                        <span class="pull-left">Mais</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-exclamation-triangle fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge">{{ tarefasController.tarefasAtrasadas }}</div>
+                            <div>Tarefas atrasadas</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#/relatoriotarefas/concluidas">
+                    <div class="panel-footer">
+                        <span class="pull-left">Mais</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- /.container-fluid -->

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Produtos
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i> Produtos
+                </li>
+            </ol>
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            
+            <div class="table-responsive" ng-controller="ProdutoConsultaController as produtoConsultaController">
+                <table class="table table-bordered table-hover table-striped" >
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ativo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fbody">
+                            <tr ng-repeat="produto in produtoConsultaController.produtos">
+                                <td>{{produto.nome}}</td>
+                                <td>{{produto.ativo}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default"><a href="#/produtos/{{produto.idprodutos}}" >Alterar</a></button>
+                                        <div ng-show="{{produto.ativo}}">
+                                            <button type="button" class="btn btn-default" ng-click="produtoConsultaController.desativa(produto.idprodutos)">Desativar</button>
+                                        </div>
+                                        <div ng-hide="{{produto.ativo}}">
+                                            <button type="button" class="btn btn-default" ng-click="produtoConsultaController.ativa(produto.idprodutos)">Ativar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#/produtos/add" class="btn btn-primary btn-md" role="button">Novo produto</a>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->

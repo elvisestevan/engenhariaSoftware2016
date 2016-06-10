@@ -1,0 +1,80 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Tarefas
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i>  <a href="#/tarefas">Tarefas</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-edit"></i> Cadastro
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="alert alert-success alert-dismissible" role="alert" ng-show="{{tarefaCrudController.exibeSucesso}}">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{tarefaCrudController.mensagemSucesso}}
+    </div>
+    
+    <div class="alert alert-danger alert-dismissible" role="alert" ng-show="{{tarefaCrudController.exibeErro}}">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{tarefaCrudController.mensagemErro}}
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+
+            <form name="crudTarefa" ng-controller="TarefaCrudController as tarefaCrudController" ng-submit="tarefaCrudController.cadastra()">
+
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input class="form-control" placeholder="Insira o nome da tarefa" name="nome" ng-model="tarefaCrudController.tarefa.nome">
+                </div>
+                
+                <div class="form-group">
+                    <label>Descricao</label>
+                    <input type="textarea" class="form-control" placeholder="Insira a descricao da tarefa" name="descricao" ng-model="tarefaCrudController.tarefa.descricao">
+                </div>
+                
+                <div class="form-group">
+                    <label>Data de Inicio Estimada</label>
+                    <input class="form-control" placeholder="Insira a data de inicio estimada da tarefa" name="dataInicioEstimada" ng-model="tarefaCrudController.tarefa.dataInicioEstimada">
+                </div>
+                
+                <div class="form-group">
+                    <label>Data Fim Estimada</label>
+                    <input class="form-control" placeholder="Insira a data de fim estimada da tarefa" name="dataFimEstimada" ng-model="tarefaCrudController.tarefa.dataFimEstimada">
+                </div>
+                
+                <div class="form-group">
+                    <label>Projeto</label>
+                    <select class="form-control" name="projeto" id="projeto" ng-model="tarefaCrudController.tarefa.projetos_idprojetos">
+                        <option ng-repeat="projeto in tarefaCrudController.projetos" value="{{projeto.idprojetos}}">{{projeto.nome}}</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Responsável</label>
+                    <select class="form-control" name="usuarioTarefa" id="usuarioTarefa" ng-model="tarefaCrudController.tarefa.usuarios_idusuarios">
+                        <option ng-repeat="usuario in tarefaCrudController.usuarios" value="{{usuarios.idusuarios}}">{{usuario.nome}}</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success">Salvar</button>
+
+            </form>
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->

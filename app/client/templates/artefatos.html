@@ -1,0 +1,57 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Artefatos
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i> Artefatos
+                </li>
+            </ol>
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            
+            <div class="table-responsive" ng-controller="ArtefatoConsultaController as artefatoConsultaController">
+                <table class="table table-bordered table-hover table-striped" >
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ativo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fbody">
+                            <tr ng-repeat="artefato in artefatoConsultaController.artefatos">
+                                <td>{{artefato.nome}}</td>
+                                <td>{{artefato.ativo}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default"><a href="#/artefatos/{{artefato.idartefatos}}" >Alterar</a></button>
+                                        <div ng-show="{{artefato.ativo}}">
+                                            <button type="button" class="btn btn-default" ng-click="artefatoConsultaController.desativa(artefato.idartefatos)">Desativar</button>
+                                        </div>
+                                        <div ng-hide="{{artefato.ativo}}">
+                                            <button type="button" class="btn btn-default" ng-click="artefatoConsultaController.ativa(artefato.idartefatos)">Ativar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#/artefatos/add" class="btn btn-primary btn-md" role="button">Novo artefato</a>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->

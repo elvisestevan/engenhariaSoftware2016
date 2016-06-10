@@ -1,0 +1,12 @@
+{
+  "name": "tgfatec",
+  "main": "app.js",
+  "dependencies": {
+        "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "express-myconnection": "^1.0.4",
+    "jsonwebtoken": "^7.0.0",
+    "morgan": "^1.7.0",
+    "mysql": "^2.11.1"
+  }
+}

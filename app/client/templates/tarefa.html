@@ -1,0 +1,62 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Tarefas
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i>  <a href="#/tarefas">Tarefas</a>
+                </li>
+                <li class="active">
+                    <i class="fa fa-edit"></i> Visualizacao
+                </li>
+            </ol>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-6" ng-controller="TarefaViewController as tarefaViewController">
+
+            <div class="form-group">
+                <label>Nome: {{ tarefaViewController.tarefa.nome }}</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Descricao: {{ tarefaViewController.tarefa.descricao }}</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Data Inicio Estimada: {{ tarefaViewController.tarefa.dataInicioEstimada }}</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Data Fim Estimada: {{ tarefaViewController.tarefa.dataFimEstimada }}</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Data Inicio Real: {{ tarefaViewController.tarefa.dataInicioReal }}</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Data Fim Real: {{ tarefaViewController.tarefa.dataFimReal }}</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Projeto: {{ tarefaViewController.tarefa.projeto.nome }}</label>
+            </div>
+            
+            <div class="form-group">
+                <label>Ativo: {{ tarefaViewController.tarefa.ativo }}</label>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->

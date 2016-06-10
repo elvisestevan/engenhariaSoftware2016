@@ -1,0 +1,67 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Tarefas
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    <i class="fa fa-user"></i> Tarefas
+                </li>
+            </ol>
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            
+            <div class="table-responsive" ng-controller="TarefaConsultaController as tarefaConsultaController">
+                <table class="table table-bordered table-hover table-striped" >
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descricao</th>
+                            <th>Data Inicio Estimada</th>
+                            <th>Data Fim Estimada</th>
+                            <th>Data Inicio Real</th>
+                            <th>Data Fim Real</th>
+                            <th>Ativo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fbody">
+                            <tr ng-repeat="tarefa in tarefaConsultaController.tarefas">
+                                <td>{{tarefa.nome}}</td>
+                                <td>{{tarefa.descricao}}</td>
+                                <td>{{tarefa.dataInicioEstimada}}</td>
+                                <td>{{tarefa.dataFimEstimada}}</td>
+                                <td>{{tarefa.dataInicioReal}}</td>
+                                <td>{{tarefa.dataFimReal}}</td>
+                                <td>{{tarefa.ativo}}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default"><a href="#/tarefas/{{tarefa.idtarefas}}" >Alterar</a></button>
+                                        <div ng-show="{{tarefa.ativo}}">
+                                            <button type="button" class="btn btn-default" ng-click="tarefaConsultaController.desativa(tarefa.idtarefas)">Desativar</button>
+                                        </div>
+                                        <div ng-hide="{{tarefa.ativo}}">
+                                            <button type="button" class="btn btn-default" ng-click="tarefaConsultaController.ativa(tarefa.idtarefas)">Ativar</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#/tarefas/add" class="btn btn-primary btn-md" role="button">Nova tarefa</a>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    </div>
+    <!-- /.container-fluid -->
