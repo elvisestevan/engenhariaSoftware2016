@@ -37,10 +37,10 @@
                             <tr ng-repeat="tarefa in tarefaConsultaController.tarefas">
                                 <td>{{tarefa.nome}}</td>
                                 <td>{{tarefa.descricao}}</td>
-                                <td>{{tarefa.dataInicioEstimada}}</td>
-                                <td>{{tarefa.dataFimEstimada}}</td>
-                                <td>{{tarefa.dataInicioReal}}</td>
-                                <td>{{tarefa.dataFimReal}}</td>
+                                <td>{{tarefa.dataInicioEstimada | date: 'dd/MM/yyyy'}}</td>
+                                <td>{{tarefa.dataFimEstimada | date: 'dd/MM/yyyy'}}</td>
+                                <td>{{tarefa.dataInicioReal | date: 'dd/MM/yyyy'}}</td>
+                                <td>{{tarefa.dataFimReal | date: 'dd/MM/yyyy'}}</td>
                                 <td>{{tarefa.ativo}}</td>
                                 <td>
                                     <div class="btn-group">
